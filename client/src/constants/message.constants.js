@@ -1,0 +1,20 @@
+export const ERROR_MESSAGE = {
+  CREATED: 'Create failed',
+  UPDATED: 'Update failed',
+  DELETED: 'Delete failed',
+  FETCHED: 'Fetch failed',
+  FETCHED_ALL: 'Fetch all failed',
+  FETCHED_ONE: 'Fetch one failed',
+  FETCHED_BY_ID: 'Fetch by id failed',
+  FETCHED_BY_FIELD: 'Fetch by field failed',
+  FETCHED_BY_QUERY: 'Fetch by query failed',
+  FETCHED_BY_PAGE: 'Fetch by page failed',
+  FETCHED_BY_LIMIT: 'Fetch by limit failed',
+  FETCHED_BY_SORT: 'Fetch by sort failed',
+  FETCHED_BY_FILTER: 'Fetch by filter failed',
+  FETCHED_BY_SEARCH: 'Fetch by search failed',
+  FETCHED_BY_DATE: 'Fetch by date failed',
+  FETCHED_BY_DATE_RANGE: 'Fetch by date range failed',
+  FETCHED_BY_DATE_TIME: 'Fetch by date time failed',
+  SOMETHING_WENT_WRONG: 'Đã có lỗi xảy ra, vui lòng thử lại sau'
+}
