@@ -1,4 +1,4 @@
-package com.tekseries.server.core.admin.staff.model.response;
+package com.tekseries.server.utils;
 
 import lombok.Getter;
 import lombok.Setter;
