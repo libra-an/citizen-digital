@@ -19,13 +19,11 @@ import java.io.Serializable;
 @Table(name = "event_tag", schema = "demo1")
 public class EventTag extends PrimaryEntity implements Serializable {
 
-    @MapsId("eventId")
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "event_id", nullable = false)
     private Event event;
 
-    @MapsId("tagId")
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "tag_id", nullable = false)

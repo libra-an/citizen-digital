@@ -1,19 +1,22 @@
 package com.tekseries.server.entity;
 
+import com.tekseries.server.entity.base.PrimaryEntity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.io.Serializable;
 
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "tag", schema = "demo1")
-public class Tag {
-    @Id
-    @Size(max = 36)
-    @Column(name = "tag_id", nullable = false, length = 36)
-    private String tagId;
+public class Tag extends PrimaryEntity implements Serializable {
 
     @Size(max = 100)
     @Column(name = "name", length = 100)

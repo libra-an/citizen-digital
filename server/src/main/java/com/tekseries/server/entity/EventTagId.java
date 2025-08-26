@@ -3,7 +3,6 @@ package com.tekseries.server.entity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,6 +11,7 @@ import org.hibernate.Hibernate;
 
 import java.io.Serializable;
 import java.util.Objects;
+import java.util.UUID;
 
 @Getter
 @Setter
@@ -20,15 +20,14 @@ import java.util.Objects;
 @Embeddable
 public class EventTagId implements Serializable {
     private static final long serialVersionUID = 8196963618033226400L;
-    @Size(max = 36)
-    @NotNull
-    @Column(name = "event_id", nullable = false, length = 36)
-    private String eventId;
 
-    @Size(max = 36)
     @NotNull
-    @Column(name = "tag_id", nullable = false, length = 36)
-    private String tagId;
+    @Column(name = "event_id", nullable = false)
+    private UUID eventId;
+
+    @NotNull
+    @Column(name = "tag_id", nullable = false)
+    private UUID tagId;
 
     @Override
     public boolean equals(Object o) {
@@ -43,5 +42,4 @@ public class EventTagId implements Serializable {
     public int hashCode() {
         return Objects.hash(eventId, tagId);
     }
-
 }
