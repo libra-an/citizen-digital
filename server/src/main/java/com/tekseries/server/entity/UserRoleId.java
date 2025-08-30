@@ -19,7 +19,7 @@ import java.util.Objects;
 @NoArgsConstructor
 @Embeddable
 public class UserRoleId implements Serializable {
-    private static final long serialVersionUID = 8051298837605032292L;
+    private static final long serialVersionUID = 5336863795480057299L;
     @Size(max = 36)
     @NotNull
     @Column(name = "user_id", nullable = false, length = 36)

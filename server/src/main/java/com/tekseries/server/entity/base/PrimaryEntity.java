@@ -19,11 +19,11 @@ import lombok.Setter;
 public abstract class PrimaryEntity extends AuditEntity implements IsIdentified {
 
     @Id
-    @Column(length = EntityProperties.LENGTH_ID, updatable = false)
+    @Column(length = EntityProperties.LENGTH_ID, updatable = false, nullable = false)
     private String id;
 
     @Column(name = "status")
-    @Enumerated(EnumType.ORDINAL)
+    @Enumerated(EnumType.STRING)
     private EntityStatus status;
 
 }

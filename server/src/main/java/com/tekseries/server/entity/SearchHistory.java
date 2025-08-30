@@ -7,20 +7,19 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import java.io.Serializable;
-import java.time.Instant;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "search_history", schema = "demo1")
+@Table(name = "search_history", schema = "citizen_digital")
 public class SearchHistory extends PrimaryEntity implements Serializable {
+
 
     @ManyToOne(fetch = FetchType.LAZY)
     @OnDelete(action = OnDeleteAction.CASCADE)
@@ -34,9 +33,5 @@ public class SearchHistory extends PrimaryEntity implements Serializable {
     @Size(max = 50)
     @Column(name = "search_type", length = 50)
     private String searchType;
-
-    @ColumnDefault("CURRENT_TIMESTAMP")
-    @Column(name = "timestamp")
-    private Instant timestamp;
 
 }

@@ -18,7 +18,7 @@ import java.time.Instant;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "schedule", schema = "demo1")
+@Table(name = "schedule", schema = "citizen_digital")
 public class Schedule extends PrimaryEntity implements Serializable {
 
     @ManyToOne(fetch = FetchType.LAZY)

@@ -12,14 +12,13 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import java.io.Serializable;
-import java.time.Instant;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "group_membership", schema = "demo1")
+@Table(name = "group_membership", schema = "citizen_digital")
 public class GroupMembership extends PrimaryEntity implements Serializable {
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -36,9 +35,5 @@ public class GroupMembership extends PrimaryEntity implements Serializable {
     @ColumnDefault("'member'")
     @Column(name = "role", length = 50)
     private String role;
-
-    @ColumnDefault("CURRENT_TIMESTAMP")
-    @Column(name = "joined_at")
-    private Instant joinedAt;
 
 }

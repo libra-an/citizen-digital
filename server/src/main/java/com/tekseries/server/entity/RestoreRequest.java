@@ -19,13 +19,8 @@ import java.time.Instant;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "restore_request", schema = "demo1")
+@Table(name = "restore_request", schema = "citizen_digital")
 public class RestoreRequest extends PrimaryEntity implements Serializable {
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    @JoinColumn(name = "streak_id")
-    private Streak streak;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @OnDelete(action = OnDeleteAction.CASCADE)
@@ -36,10 +31,7 @@ public class RestoreRequest extends PrimaryEntity implements Serializable {
     @Column(name = "request_date")
     private Instant requestDate;
 
-    @Size(max = 10)
-    @ColumnDefault("'pending'")
-    @Column(name = "status", length = 10)
-    private String status;
+
 
     @Lob
     @Column(name = "reason")

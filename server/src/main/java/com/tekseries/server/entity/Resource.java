@@ -13,15 +13,15 @@ import org.hibernate.annotations.OnDeleteAction;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.time.Instant;
 
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Entity
-@Table(name = "resource", schema = "demo1")
+@Table(name = "resource", schema = "citizen_digital")
 public class Resource extends PrimaryEntity implements Serializable {
+
 
     @ManyToOne(fetch = FetchType.LAZY)
     @OnDelete(action = OnDeleteAction.CASCADE)
@@ -39,10 +39,6 @@ public class Resource extends PrimaryEntity implements Serializable {
     @Size(max = 255)
     @Column(name = "file_url")
     private String fileUrl;
-
-    @ColumnDefault("CURRENT_TIMESTAMP")
-    @Column(name = "created_at")
-    private Instant createdAt;
 
     @ColumnDefault("0.0")
     @Column(name = "rating", precision = 3, scale = 1)

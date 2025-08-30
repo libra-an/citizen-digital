@@ -7,7 +7,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
@@ -19,7 +18,7 @@ import java.time.Instant;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "event", schema = "demo1")
+@Table(name = "event", schema = "citizen_digital")
 public class Event extends PrimaryEntity implements Serializable {
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -40,9 +39,5 @@ public class Event extends PrimaryEntity implements Serializable {
 
     @Column(name = "end_time")
     private Instant endTime;
-
-    @ColumnDefault("CURRENT_TIMESTAMP")
-    @Column(name = "created_at")
-    private Instant createdAt;
 
 }

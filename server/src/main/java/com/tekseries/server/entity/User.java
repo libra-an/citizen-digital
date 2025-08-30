@@ -1,6 +1,7 @@
 package com.tekseries.server.entity;
 
 import com.tekseries.server.entity.base.PrimaryEntity;
+import com.tekseries.server.infrastructure.constant.EntityProperties;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -18,7 +19,11 @@ import java.time.Instant;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "user", schema = "demo1")
+@Table(name = "user", schema = "citizen_digital")
+//@AttributeOverride(
+//        name = "id",
+//        column = @Column(name = "user_id", length = EntityProperties.LENGTH_ID, updatable = false, nullable = false)
+//)
 public class User extends PrimaryEntity implements Serializable {
 
     @Size(max = 255)
@@ -52,15 +57,21 @@ public class User extends PrimaryEntity implements Serializable {
     private String bio;
 
     @Size(max = 50)
-    @ColumnDefault("'student'")
+    @ColumnDefault("'USER'")
     @Column(name = "role", length = 50)
     private String role;
-
-    @ColumnDefault("CURRENT_TIMESTAMP")
-    @Column(name = "created_at")
-    private Instant createdAt;
 
     @Column(name = "last_login")
     private Instant lastLogin;
 
+    @Column
+    private Long banExpiryDate;
+
+    @Column(name = "total_points")
+    private Integer totalPoints = 0;
+
+
+    public User(String id) {
+        this.setId(id);
+    }
 }

@@ -12,15 +12,15 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import java.io.Serializable;
-import java.time.Instant;
 
 @Getter
 @Setter
-@Entity
-@Table(name = "admin", schema = "demo1")
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
+@Table(name = "admin", schema = "citizen_digital")
 public class Admin extends PrimaryEntity implements Serializable {
+
 
     @ManyToOne(fetch = FetchType.LAZY)
     @OnDelete(action = OnDeleteAction.CASCADE)
@@ -31,9 +31,5 @@ public class Admin extends PrimaryEntity implements Serializable {
     @ColumnDefault("'full'")
     @Column(name = "permission_level", length = 50)
     private String permissionLevel;
-
-    @ColumnDefault("CURRENT_TIMESTAMP")
-    @Column(name = "created_at")
-    private Instant createdAt;
 
 }

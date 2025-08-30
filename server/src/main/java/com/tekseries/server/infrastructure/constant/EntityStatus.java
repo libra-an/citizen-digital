@@ -1,13 +1,14 @@
 package com.tekseries.server.infrastructure.constant;
 
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public enum EntityStatus {
     ACTIVE,
-    INACTIVE;
+    INACTIVE,
+    BANNED,
+    DELETED;
 
     public static List<String> getAllStatus() {
         return Arrays.stream(EntityStatus.values())
