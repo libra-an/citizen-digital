@@ -16,8 +16,9 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "role", schema = "demo1")
+@Table(name = "role", schema = "citizen_digital")
 public class Role extends PrimaryEntity implements Serializable {
+
 
     @Size(max = 50)
     @NotNull

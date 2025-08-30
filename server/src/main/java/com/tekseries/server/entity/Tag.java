@@ -15,8 +15,9 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "tag", schema = "demo1")
+@Table(name = "tag", schema = "citizen_digital")
 public class Tag extends PrimaryEntity implements Serializable {
+
 
     @Size(max = 100)
     @Column(name = "name", length = 100)

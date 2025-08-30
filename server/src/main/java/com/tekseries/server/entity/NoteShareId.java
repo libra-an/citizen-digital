@@ -4,7 +4,9 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.Hibernate;
 
@@ -13,9 +15,11 @@ import java.util.Objects;
 
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Embeddable
 public class NoteShareId implements Serializable {
-    private static final long serialVersionUID = -4599361879746808073L;
+    private static final long serialVersionUID = -2885445859674678100L;
     @Size(max = 36)
     @NotNull
     @Column(name = "note_id", nullable = false, length = 36)

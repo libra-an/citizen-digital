@@ -17,8 +17,10 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "note_share", schema = "demo1")
+@Table(name = "note_share", schema = "citizen_digital")
 public class NoteShare extends PrimaryEntity implements Serializable {
+
+
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @OnDelete(action = OnDeleteAction.CASCADE)

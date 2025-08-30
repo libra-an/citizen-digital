@@ -1,6 +1,7 @@
 package com.tekseries.server.entity;
 
 import com.tekseries.server.entity.base.PrimaryEntity;
+import com.tekseries.server.infrastructure.constant.EntityProperties;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -8,25 +9,17 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.ColumnDefault;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
 
 import java.io.Serializable;
-import java.time.Instant;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "post", schema = "demo1")
+@Table(name = "post", schema = "citizen_digital")
 public class Post extends PrimaryEntity implements Serializable {
 
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    @JoinColumn(name = "user_id")
-    private User user;
 
     @Lob
     @Column(name = "content")
@@ -37,8 +30,7 @@ public class Post extends PrimaryEntity implements Serializable {
     @Column(name = "visibility", length = 50)
     private String visibility;
 
-    @ColumnDefault("CURRENT_TIMESTAMP")
-    @Column(name = "created_at")
-    private Instant createdAt;
-
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private User user;
 }

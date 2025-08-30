@@ -17,7 +17,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "recruitment_post", schema = "demo1")
+@Table(name = "recruitment_post", schema = "citizen_digital")
 public class RecruitmentPost extends PrimaryEntity implements Serializable {
 
     @ManyToOne(fetch = FetchType.LAZY)

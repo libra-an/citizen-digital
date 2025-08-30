@@ -16,8 +16,10 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "post_tag", schema = "demo1")
+@Table(name = "post_tag", schema = "citizen_digital")
 public class PostTag extends PrimaryEntity implements Serializable {
+
+
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @OnDelete(action = OnDeleteAction.CASCADE)

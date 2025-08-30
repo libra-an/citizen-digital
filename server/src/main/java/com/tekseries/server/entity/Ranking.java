@@ -7,19 +7,17 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import java.io.Serializable;
-import java.time.Instant;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "ranking", schema = "demo1")
+@Table(name = "ranking", schema = "citizen_digital")
 public class Ranking extends PrimaryEntity implements Serializable {
 
 
@@ -39,8 +37,7 @@ public class Ranking extends PrimaryEntity implements Serializable {
     @Column(name = "total_points")
     private Integer totalPoints;
 
-    @ColumnDefault("CURRENT_TIMESTAMP")
-    @Column(name = "updated_at")
-    private Instant updatedAt;
+    @Column(name = "ranking_type", length = 20)
+    private String rankingType = "all_time";
 
 }

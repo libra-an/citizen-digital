@@ -1,6 +1,7 @@
 package com.tekseries.server.entity;
 
 import com.tekseries.server.entity.base.PrimaryEntity;
+import com.tekseries.server.infrastructure.constant.EntityProperties;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -12,14 +13,17 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import java.io.Serializable;
-import java.time.Instant;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "notification", schema = "demo1")
+@Table(name = "notification", schema = "citizen_digital")
+@AttributeOverride(
+        name = "id",
+        column = @Column(name = "notification_id", length = EntityProperties.LENGTH_ID, updatable = false, nullable = false)
+)
 public class Notification extends PrimaryEntity implements Serializable {
 
 
@@ -39,10 +43,6 @@ public class Notification extends PrimaryEntity implements Serializable {
     @Size(max = 36)
     @Column(name = "related_id", length = 36)
     private String relatedId;
-
-    @ColumnDefault("CURRENT_TIMESTAMP")
-    @Column(name = "created_at")
-    private Instant createdAt;
 
     @ColumnDefault("0")
     @Column(name = "is_read")

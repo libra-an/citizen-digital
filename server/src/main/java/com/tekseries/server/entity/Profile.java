@@ -12,14 +12,13 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import java.io.Serializable;
-import java.time.Instant;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "profile", schema = "demo1")
+@Table(name = "profile", schema = "citizen_digital")
 public class Profile extends PrimaryEntity implements Serializable {
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -31,9 +30,5 @@ public class Profile extends PrimaryEntity implements Serializable {
     @ColumnDefault("'public'")
     @Column(name = "privacy_setting", length = 50)
     private String privacySetting;
-
-    @ColumnDefault("CURRENT_TIMESTAMP")
-    @Column(name = "updated_at")
-    private Instant updatedAt;
 
 }

@@ -20,8 +20,9 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "streak", schema = "demo1")
+@Table(name = "streak", schema = "citizen_digital")
 public class Streak extends PrimaryEntity implements Serializable {
+
 
     @ManyToOne(fetch = FetchType.LAZY)
     @OnDelete(action = OnDeleteAction.CASCADE)

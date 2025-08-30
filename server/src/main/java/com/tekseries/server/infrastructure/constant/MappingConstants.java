@@ -7,6 +7,4 @@ public final class MappingConstants {
     /* API BASE ROLE */
     public static final String ADMIN = "/admin";
     public static final String USER = "/user";
-
-
 }

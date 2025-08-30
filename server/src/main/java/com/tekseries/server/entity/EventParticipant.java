@@ -7,19 +7,17 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import java.io.Serializable;
-import java.time.Instant;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "event_participant", schema = "demo1")
+@Table(name = "event_participant", schema = "citizen_digital")
 public class EventParticipant extends PrimaryEntity implements Serializable {
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -31,9 +29,5 @@ public class EventParticipant extends PrimaryEntity implements Serializable {
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "user_id")
     private User user;
-
-    @ColumnDefault("CURRENT_TIMESTAMP")
-    @Column(name = "joined_at")
-    private Instant joinedAt;
 
 }

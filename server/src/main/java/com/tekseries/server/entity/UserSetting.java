@@ -14,7 +14,6 @@ import org.hibernate.annotations.OnDeleteAction;
 import org.hibernate.type.SqlTypes;
 
 import java.io.Serializable;
-import java.time.Instant;
 import java.util.Map;
 
 @Getter
@@ -22,7 +21,7 @@ import java.util.Map;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "user_setting", schema = "demo1")
+@Table(name = "user_setting", schema = "citizen_digital")
 public class UserSetting extends PrimaryEntity implements Serializable {
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -38,9 +37,5 @@ public class UserSetting extends PrimaryEntity implements Serializable {
     @Column(name = "notification_preferences")
     @JdbcTypeCode(SqlTypes.JSON)
     private Map<String, Object> notificationPreferences;
-
-    @ColumnDefault("CURRENT_TIMESTAMP")
-    @Column(name = "updated_at")
-    private Instant updatedAt;
 
 }

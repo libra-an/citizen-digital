@@ -7,19 +7,17 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import java.io.Serializable;
-import java.time.Instant;
 
 @Getter
 @Setter
-@Entity
-@Table(name = "activity_log", schema = "demo1")
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
+@Table(name = "activity_log", schema = "citizen_digital")
 public class ActivityLog extends PrimaryEntity implements Serializable {
 
 
@@ -31,10 +29,6 @@ public class ActivityLog extends PrimaryEntity implements Serializable {
     @Size(max = 50)
     @Column(name = "action_type", length = 50)
     private String actionType;
-
-    @ColumnDefault("CURRENT_TIMESTAMP")
-    @Column(name = "timestamp")
-    private Instant timestamp;
 
     @Lob
     @Column(name = "device_info")

@@ -16,15 +16,13 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "resource_tag", schema = "demo1")
+@Table(name = "resource_tag", schema = "citizen_digital")
 public class ResourceTag extends PrimaryEntity implements Serializable {
-
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "resource_id", nullable = false)
     private Resource resource;
-
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @OnDelete(action = OnDeleteAction.CASCADE)

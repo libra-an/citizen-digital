@@ -7,19 +7,17 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import java.io.Serializable;
-import java.time.Instant;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "media", schema = "demo1")
+@Table(name = "media", schema = "citizen_digital")
 public class Media extends PrimaryEntity implements Serializable {
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -39,9 +37,5 @@ public class Media extends PrimaryEntity implements Serializable {
     @Size(max = 50)
     @Column(name = "type", length = 50)
     private String type;
-
-    @ColumnDefault("CURRENT_TIMESTAMP")
-    @Column(name = "uploaded_at")
-    private Instant uploadedAt;
 
 }
